@@ -1,15 +1,24 @@
 'use stict';
-const number = 21234;
-const absNumber = Math.round(Math.abs(number));
-const numberString = absNumber.toString();
+const number = prompt('Enter five-digit number.')
 
 /* verify if:
 num has 5 digits 
 */
 
-if (numberString.length === 5){
-const splitedDigits = numberString.split("").join(' ');
-console.log(splitedDigits);
+if (number === null){
+    alert('You canceled the input. Refresh the page and try again.');
+}else if (!number.trim()){
+    alert('The input is empty. Refresh the page and try again.');
+}else if (isNaN(number)){
+    alert('The input must contain numbers only! Refresh the page and try again.');
 }else{
-console.log('Five digits number only!');
+    //Is a number
+    const absNumber = Math.round(Math.abs(number));
+    const numberString = absNumber.toString();
+    if (numberString.length === 5){
+         const splitedDigits = numberString.split("").join(' ');
+         console.log(splitedDigits);
+    }else{
+         alert('Five-digit number only! Refresh the page and try again.');
+    };
 };
