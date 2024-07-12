@@ -13,7 +13,7 @@ if (number === null){
     alert('The input must contain numbers only! Refresh the page and try again.');
 }else{
     //Is a number
-    const absNumber = Math.round(Math.abs(number));
+    const absNumber = parseInt(Math.abs(number));
     const numberString = absNumber.toString();
     if (numberString.length === 5){
          const splitedDigits = numberString.split("").join(' ');
